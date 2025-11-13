@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do Mangá</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="manga; else loading">
+    <ion-card>
+      <img [src]="manga.images.jpg.image_url" alt="{{ manga.title }}" />
+
+      <ion-card-header>
+        <ion-card-title>{{ manga.title | capitalize }}</ion-card-title>
+        <ion-card-subtitle>
+          Score: <strong>{{ manga.score || 'N/A' }}</strong>
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p><strong>Autor:</strong> {{ manga.authors?.[0]?.name || 'Desconhecido' }}</p>
+        <p><strong>Volumes:</strong> {{ manga.volumes || 'Desconhecido' }}</p>
+        <p><strong>Capítulos:</strong> {{ manga.chapters || 'Desconhecido' }}</p>
+        <p><strong>Status:</strong> {{ manga.status || 'Indisponível' }}</p>
+
+        <ion-text color="medium">
+          <p style="margin-top: 10px; text-align: justify;">
+            {{ manga.synopsis || 'Sem descrição disponível.' }}
+          </p>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Carregando detalhes...</p>
+    </div>
+  </ng-template>
+</ion-content>

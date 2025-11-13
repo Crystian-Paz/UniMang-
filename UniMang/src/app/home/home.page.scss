@@ -1,0 +1,20 @@
+ion-content {
+  --background: #f4f4f4;
+}
+
+ion-item {
+  margin: 10px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+ion-item:hover {
+  transform: scale(1.02);
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 40%;
+  font-size: 1.1rem;
+  color: #666;
+}

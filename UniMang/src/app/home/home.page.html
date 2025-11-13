@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Manga Finder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="searchManga()"
+    placeholder="Buscar mangá..."
+  ></ion-searchbar>
+
+  <ion-list *ngIf="mangas.length > 0; else noResults">
+    <ion-item
+      *ngFor="let manga of mangas"
+      [routerLink]="['/details', manga.mal_id]"
+      [appHighlightScore]="manga.score"
+    >
+      <ion-thumbnail slot="start">
+        <img [src]="manga.images.jpg.image_url" alt="{{ manga.title }}" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ manga.title | capitalize }}</h2>
+        <p><strong>Score:</strong> {{ manga.score || 'N/A' }}</p>
+        <p><strong>Volumes:</strong> {{ manga.volumes || 'Desconhecido' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noResults>
+    <div class="no-results">
+      <p>Nenhum mangá encontrado 😢</p>
+    </div>
+  </ng-template>
+
+</ion-content>
