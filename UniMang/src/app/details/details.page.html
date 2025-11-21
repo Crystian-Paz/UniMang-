@@ -9,7 +9,8 @@
 
 <ion-content class="ion-padding">
   <ng-container *ngIf="manga; else loading">
-    <ion-card>
+    
+    <ion-card [appHighlightScore]="manga.score">
       <img [src]="manga.images.jpg.image_url" alt="{{ manga.title }}" />
 
       <ion-card-header>
@@ -32,6 +33,7 @@
         </ion-text>
       </ion-card-content>
     </ion-card>
+    
   </ng-container>
 
   <ng-template #loading>

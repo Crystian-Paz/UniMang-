@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+// Importe seus serviços e pipes (certifique-se que os arquivos existem nestes caminhos)
 import { MangaService } from '../services/manga.service';
 import { CapitalizePipe } from '../pipes/capitalize.pipe';
-import { HighlightScoreDirective } from '../directives/highlight-score.directive';
 import { TruncatePipe } from '../pipes/truncate.pipe';
+import { HighlightScoreDirective } from '../directives/highlight-score.directive';
 
 @Component({
   selector: 'app-home',
@@ -15,14 +17,14 @@ import { TruncatePipe } from '../pipes/truncate.pipe';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   imports: [
-  IonicModule,
-  CommonModule,
-  FormsModule,
-  HttpClientModule,
-  RouterModule,
-  CapitalizePipe,
-  TruncatePipe,
-  HighlightScoreDirective
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+    CapitalizePipe,       
+    TruncatePipe,         
+    HighlightScoreDirective 
   ],
 })
 export class HomePage {

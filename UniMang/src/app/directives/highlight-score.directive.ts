@@ -11,11 +11,11 @@ export class HighlightScoreDirective implements OnChanges {
 
   ngOnChanges() {
     if (this.appHighlightScore >= 8) {
-      this.el.nativeElement.style.backgroundColor = '#c8e6c9';
+      this.el.nativeElement.style.color = '#60e464ff';
     } else if (this.appHighlightScore >= 6) {
-      this.el.nativeElement.style.backgroundColor = '#fff9c4';
+      this.el.nativeElement.style.color = '#f5e55aff';
     } else {
-      this.el.nativeElement.style.backgroundColor = '#ffcdd2'; 
+      this.el.nativeElement.style.color = '#f55767ff'; 
     }
     this.el.nativeElement.style.borderRadius = '8px';
   }
