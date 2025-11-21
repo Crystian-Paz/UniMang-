@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MangaService } from '../services/manga.service';
 import { CapitalizePipe } from '../pipes/capitalize.pipe';
 import { HighlightScoreDirective } from '../directives/highlight-score.directive';
+import { TruncatePipe } from '../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { HighlightScoreDirective } from '../directives/highlight-score.directive
   HttpClientModule,
   RouterModule,
   CapitalizePipe,
+  TruncatePipe,
   HighlightScoreDirective
   ],
 })

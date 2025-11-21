@@ -23,7 +23,7 @@
       </ion-thumbnail>
 
       <ion-label>
-        <h2>{{ manga.title | capitalize }}</h2>
+        <h2>{{ manga.title | capitalize | truncate:30 }}</h2>
         <p><strong>Score:</strong> {{ manga.score || 'N/A' }}</p>
         <p><strong>Volumes:</strong> {{ manga.volumes || 'Desconhecido' }}</p>
       </ion-label>
